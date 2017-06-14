@@ -1,1 +1,1 @@
-<h1>Hello Selamat Datang</h1>
+<h1><center>Hello Selamat Datang</center></h1>

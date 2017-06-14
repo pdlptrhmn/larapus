@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Styles -->
+    <!-- <link href="/css/font-awesome.min.cs" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrapawesome.min.cs" rel="stylesheet" > -->
+    <link href="{{ asset ('css/bootstrap.min.css')}} " rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +50,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                    @if (auth::check())
+                    <li><a href="{{url('/home')}}">Dashboard</a></li>
+                    @endif
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,7 +61,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li><a href="{{ url('/register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -83,6 +93,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/jquery-3.0.min.js"></script>
+    <script src="js/bootsrtrap.min.js"></script>
+    @yield('script')
     @include('layouts.menu')
 </body>
 </html>
