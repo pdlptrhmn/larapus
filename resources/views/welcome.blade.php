@@ -7,7 +7,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Hallo</div>
                             <div class="panel-body">
-                                Selamat Datang Di Larapus
+                                Selamat Datang Di Halaman Saya
                             </div>
                         </div>
                     </div>
