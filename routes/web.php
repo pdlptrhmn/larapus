@@ -18,4 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::resource('/baru', 'Barucontroller@test' );
+Route::resource('/baru', 'Barucontroller@test');
+
+Route::group(['middleware' => 'web'], function () {
+Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function() {
+
+Route::resource('authors','AuthorsController');
+	
+	
+});
+	});
