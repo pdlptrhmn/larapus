@@ -16,7 +16,7 @@ class Authors extends Model
 
     public static function boot()
     {
-    	parents::boot();
+    	parent::boot();
 
     	self::deleting(function($author){
 

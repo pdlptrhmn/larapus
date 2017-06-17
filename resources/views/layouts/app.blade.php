@@ -5,10 +5,7 @@
     <!-- Styles -->
     <!-- <link href="/css/font-awesome.min.cs" rel="stylesheet" type="text/css">
     <link href="/css/bootstrapawesome.min.cs" rel="stylesheet" > -->
-    <link href="{{ asset ('css/bootstrap.min.css')}} " rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="{{ asset('css/jquery.dataTables.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
+    
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +17,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset ('css/bootstrap.min.css')}} " rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -71,7 +71,7 @@
                             <li><a href="{{ url('/register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{Auth::user()->name}}
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
@@ -98,12 +98,12 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <!-- <script src="/js/bootstrap.min.js"></script> -->
+    <script src="{{ asset('/js/app.js') }}"></script>
+    <!-- <script src="/js/jquery-3.1.0.js"></script> -->
     <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
-    <script src="/js/custom.js"></script>
+    <script src="{{ asset('/js/custom.js') }}"></script>
     @yield('scripts')
-    @include('layouts.menu')
+    <!-- @include('layouts.menu') -->
 </body>
 </html>
